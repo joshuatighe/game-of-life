@@ -104,7 +104,7 @@ const App = () => {
   }
 
   const getCellState = (x, y) => {
-    // out of bounds: treat as dead
+    // out of bounds: auto treat as dead
     if (x < 0 || x >= size || y < 0 || y >= size) return false;
 
     return cells[y][x].alive
@@ -147,7 +147,7 @@ const App = () => {
           <Button text={'reset simulation'} icon={'reload'} handleClick={clearBoard} />
           <Button text={'randomize'} icon={'chess'} handleClick={randomizeBoard} />
           <Slider name={'size'} min={1} max={100} value={size} setValue={setSize} />
-          <Slider name={'speed'} min={1} max={1000} value={speed} setValue={setSpeed} />
+          <Slider name={'speed'} min={10} max={1000} value={speed} setValue={setSpeed} />
         </div>
         <Footer />
       </div>
