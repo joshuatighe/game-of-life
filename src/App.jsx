@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import Board from './Board'
-import Button from './Button'
-import Slider from './Slider'
-import ExampleBoards from './ExampleBoards'
-import Footer from './Footer'
+import Board from './components/Board'
+import Button from './components/Button'
+import Slider from './components/Slider'
+import ExampleBoards from './components/ExampleBoards'
+import Footer from './components/Footer'
 import './styles.css'
 
 const App = () => {
