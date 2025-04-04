@@ -78,9 +78,29 @@ const App = () => {
     if (getCellState(x + 1, y + 1)) neighbors++ // bottom right
     if (getCellState(x, y + 1))     neighbors++ // bottom
     if (getCellState(x - 1, y + 1)) neighbors++ // bottom left
-    if (getCellState(x - 1, y))     neighbors++ //  left
+    if (getCellState(x - 1, y))     neighbors++ // left
 
     return neighbors
+  }
+
+  const randomizeBoard = () => {
+    const newCells = []
+
+    for (let y = 0; y < size; y++) {
+      const cellRow = []
+      for (let x = 0; x < size; x++) {
+        const cell = {
+          x: x,
+          y: y,
+          alive: Math.random() < 0.5,
+          id: `${x}${y}`
+        }
+        cellRow.push(cell)
+      }
+      newCells.push(cellRow)
+    }
+
+    setCells(newCells)
   }
 
   const getCellState = (x, y) => {
@@ -122,6 +142,7 @@ const App = () => {
         <div className='flex gap-5 text-xl'>
           <Button text={!run ? 'start simulation' : 'stop simulation'} handleClick={() => setRun(!run)}/>
           <Button text={'reset simulation'} handleClick={clearBoard} />
+          <Button text={'randomize'} handleClick={randomizeBoard} />
           <Slider name={'size'} min={1} max={100} value={size} setValue={setSize} />
           <Slider name={'speed'} min={10} max={1000} value={speed} setValue={setSpeed} />
         </div>
