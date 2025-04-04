@@ -14,7 +14,6 @@ const Button = ({ text, icon, handleClick }) => {
           className="invert-90"
         />
       </button>
-
   )
 }
 

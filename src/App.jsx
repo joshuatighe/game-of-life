@@ -47,8 +47,6 @@ const App = () => {
 
   // game of life rules
   const updateBoard = () => {
-    console.log('updating board...')
-
     const newCells = cells.map(cellRow => cellRow.map(cell => ({ ...cell })))
 
     for (let y = 0; y < size; y++) {
