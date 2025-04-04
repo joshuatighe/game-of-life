@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import Board from './Board'
 import Button from './Button'
 import Slider from './Slider'
+import ExampleBoards from './ExampleBoards'
+import Footer from './Footer'
 import './styles.css'
 
 const App = () => {
@@ -135,10 +137,13 @@ const App = () => {
         <div className="text-4xl animate-pulse">
           game of life
         </div>
-        <Board
-          cells={cells}
-          handleCellClick={handleCellClick}
-        />
+        <div className='flex gap-4'>
+          <ExampleBoards />
+          <Board
+            cells={cells}
+            handleCellClick={handleCellClick}
+          />
+        </div>
         <div className='flex gap-5 text-xl'>
           <Button text={!run ? 'start simulation' : 'stop simulation'} handleClick={() => setRun(!run)}/>
           <Button text={'reset simulation'} handleClick={clearBoard} />
@@ -146,6 +151,7 @@ const App = () => {
           <Slider name={'size'} min={1} max={100} value={size} setValue={setSize} />
           <Slider name={'speed'} min={10} max={1000} value={speed} setValue={setSpeed} />
         </div>
+        <Footer />
       </div>
     </>
   )
