@@ -7,10 +7,10 @@ import Footer from './components/Footer'
 import './styles.css'
 
 const App = () => {
-  const [size, setSize]   = useState(10)
+  const [size, setSize]   = useState(25)
   const [cells, setCells] = useState([])
   const [run, setRun]     = useState(false)
-  const [speed, setSpeed] = useState(1000)
+  const [speed, setSpeed] = useState(50)
 
   // when a cell (div) is clicked flip its state (if game is not running)
   const handleCellClick = (e) => {
@@ -149,7 +149,7 @@ const App = () => {
           <Button text={'reset simulation'} icon={'reload'} handleClick={clearBoard} />
           <Button text={'randomize'} icon={'chess'} handleClick={randomizeBoard} />
           <Slider name={'size'} min={1} max={100} value={size} setValue={setSize} />
-          <Slider name={'speed'} min={10} max={1000} value={speed} setValue={setSpeed} />
+          <Slider name={'speed'} min={1} max={1000} value={speed} setValue={setSpeed} />
         </div>
         <Footer />
       </div>
