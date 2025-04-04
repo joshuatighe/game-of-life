@@ -145,9 +145,9 @@ const App = () => {
           />
         </div>
         <div className='flex gap-5 text-xl'>
-          <Button text={!run ? 'start simulation' : 'stop simulation'} handleClick={() => setRun(!run)}/>
-          <Button text={'reset simulation'} handleClick={clearBoard} />
-          <Button text={'randomize'} handleClick={randomizeBoard} />
+          <Button text={!run ? 'start simulation' : 'stop simulation'} icon={!run ? 'play': 'pause'} handleClick={() => setRun(!run)}/>
+          <Button text={'reset simulation'} icon={'reload'} handleClick={clearBoard} />
+          <Button text={'randomize'} icon={'chess'} handleClick={randomizeBoard} />
           <Slider name={'size'} min={1} max={100} value={size} setValue={setSize} />
           <Slider name={'speed'} min={10} max={1000} value={speed} setValue={setSpeed} />
         </div>

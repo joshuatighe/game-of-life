@@ -4,7 +4,7 @@ const Slider = ({ name, min, max, value, setValue }) => {
   }
 
   return (
-    <div className="flex gap-5 p-2">
+    <div className="flex gap-5 p-2 text-md">
       <input
         type="range"
         name={name}
