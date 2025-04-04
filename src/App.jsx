@@ -11,7 +11,7 @@ const App = () => {
   const [speed, setSpeed] = useState(1000)
 
   // when a cell (div) is clicked flip its state (if game is not running)
-  const handleCellClick =  (e) => {
+  const handleCellClick = (e) => {
     if (!run) {
       const x = parseInt(e.target.attributes.x.value)
       const y = parseInt(e.target.attributes.y.value)
@@ -78,7 +78,7 @@ const App = () => {
     if (getCellState(x + 1, y + 1)) neighbors++ // bottom right
     if (getCellState(x, y + 1))     neighbors++ // bottom
     if (getCellState(x - 1, y + 1)) neighbors++ // bottom left
-    if (getCellState(x - 1, y))    neighbors++ //  left
+    if (getCellState(x - 1, y))     neighbors++ //  left
 
     return neighbors
   }
