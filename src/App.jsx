@@ -103,6 +103,27 @@ const App = () => {
     setCells(newCells)
   }
 
+  const loadBoard = (board) => {
+    setSize(board.size)
+    const newCells = []
+
+    for (let y = 0; y < size; y++) {
+      const cellRow = []
+      for (let x = 0; x < size; x++) {
+        const cell = {
+          x: x,
+          y: y,
+          alive: Math.random() < 0.5,
+          id: `${x}${y}`
+        }
+        cellRow.push(cell)
+      }
+      newCells.push(cellRow)
+    }
+
+    setCells(newCells)
+  }
+
   const getCellState = (x, y) => {
     // out of bounds: auto treat as dead
     if (x < 0 || x >= size || y < 0 || y >= size) return false;
@@ -136,7 +157,6 @@ const App = () => {
           game of life
         </div>
         <div className='flex gap-4'>
-          <ExampleBoards />
           <Board
             cells={cells}
             handleCellClick={handleCellClick}
