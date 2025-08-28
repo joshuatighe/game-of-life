@@ -12,7 +12,4 @@ and deployed with [vercel](https://vercel.com/home)
 - [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 - [playgameoflife](https://playgameoflife.com/)
 
-## 🪪 other
-no license
-
-☘️ made with care by joshua tighe
+☘️ developed with care by joshua tighe
